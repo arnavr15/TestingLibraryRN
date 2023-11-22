@@ -15,8 +15,6 @@ import notifee, {EventType} from '@notifee/react-native';
 import getNotification from './ChatSX/notifications';
 import {getRoute} from './ChatSX/notifications/routes';
 import * as RootNavigation from './RootNavigation';
-import {UserSchemaRO} from './ChatSX/db/schemas/UserSchema';
-import {RealmProvider} from '@realm/react';
 import TrackPlayer from 'react-native-track-player';
 import {playbackService} from './ChatSX/audio';
 
@@ -53,11 +51,7 @@ function HeadlessCheck({isHeadless}) {
     return null;
   }
 
-  return (
-    <RealmProvider schema={[UserSchemaRO]}>
-      <App />
-    </RealmProvider>
-  );
+  return <App />;
 }
 
 AppRegistry.registerComponent(appName, () => HeadlessCheck);

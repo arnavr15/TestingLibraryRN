@@ -130,7 +130,6 @@ import {CognitoIdentityCredentials, S3} from 'aws-sdk';
 import AWS from 'aws-sdk';
 import {FlashList} from '@shopify/flash-list';
 import WarningMessageModal from '../../customModals/WarningMessage';
-import {useQuery} from '@realm/react';
 import {Share} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {createShimmerPlaceholder} from 'react-native-shimmer-placeholder';
@@ -219,7 +218,6 @@ const ChatRoom = ({navigation, route}: ChatRoom) => {
   const [flashListMounted, setFlashListMounted] = useState(false);
 
   const reactionArr = ['❤️', '😂', '😮', '😢', '😠', '👍'];
-  const users = useQuery<UserSchemaResponse>(USER_SCHEMA_RO);
 
   const {
     chatroomID,
@@ -910,8 +908,8 @@ const ChatRoom = ({navigation, route}: ChatRoom) => {
   // this function fetch initiate API
   async function fetchInitAPI() {
     //this line of code is for the sample app only, pass your uuid instead of this.
-    const UUID = users[0]?.userUniqueID;
-    const userName = users[0]?.userName;
+    const UUID = 'arnav123';
+    const userName = 'arnav123';
 
     let payload = {
       uuid: UUID,

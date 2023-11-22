@@ -58,7 +58,6 @@ const HomeFeed = ({navigation}: Props) => {
   } = useAppSelector(state => state.homefeed);
   const user = useAppSelector(state => state.homefeed.user);
   const {uploadingFilesMessages} = useAppSelector(state => state.upload);
-  const users = useQuery<UserSchemaResponse>(USER_SCHEMA_RO);
 
   const INITIAL_SYNC_PAGE = 1;
 
@@ -128,8 +127,6 @@ const HomeFeed = ({navigation}: Props) => {
   async function fetchData() {
     //this line of code is for the sample app only, pass your uuid instead of this.
 
-    console.log('users', users[0]);
-
     const UUID = 'arnav123';
     const userName = 'arnav123';
 
@@ -172,8 +169,8 @@ const HomeFeed = ({navigation}: Props) => {
 
   useEffect(() => {
     const listener = Linking.addEventListener('url', ({url}) => {
-      const uuid = users[0]?.userUniqueID;
-      const userName = users[0]?.userName;
+      const uuid = 'arnav123';
+      const userName = 'arnav123';
 
       const exampleRequest: DeepLinkRequest = {
         uri: url,

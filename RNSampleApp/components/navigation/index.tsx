@@ -24,7 +24,7 @@ function MainContainer() {
         initialRouteName={homeName}
         screenOptions={({route}) => ({
           tabBarIcon: ({focused, color, size}) => {
-            let iconName;
+            let iconName = '';
             let rn = route.name;
 
             if (rn === homeName) {
@@ -34,7 +34,7 @@ function MainContainer() {
             } else if (rn === settingsName) {
               iconName = focused ? 'settings' : 'settings-outline';
             } else if (rn === communityName) {
-              iconName = focused ? 'settings' : 'settings-outline';
+              iconName = focused ? 'key' : 'key-outline';
             }
 
             // You can return any component that you like here!
@@ -43,7 +43,7 @@ function MainContainer() {
           tabBarActiveTintColor: 'blue',
           tabBarInactiveTintColor: 'grey',
           tabBarLabelStyle: {
-            paddingBottom: 10,
+            marginBottom: 5,
             fontSize: 10,
           },
           tabBarStyle: [
